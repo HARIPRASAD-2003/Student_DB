@@ -138,6 +138,7 @@ const Students = () => {
           value={search}
           placeholder='Search'
           onChange={(e)=>setSearch(e.target.value)}/>
+          <p>Students: {data.length}</p>
         </div>
         <div className='top-container' style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <button onClick={openModal} id="add_display">Add Student</button>
