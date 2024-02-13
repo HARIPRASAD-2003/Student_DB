@@ -42,3 +42,14 @@ p {
     margin: 5px 0;
     color: #555;
 }
+
+@media (max-width: 768px) {
+    .dept_container {
+      max-width: 100%;
+    }
+
+    .depts div{
+        max-width: 100%;
+    }
+  }
+  
