@@ -42,7 +42,7 @@ const Students = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/students/${dept}/${search}`);
+      const response = await axios.get(`https://student-db-server.onrender.com/students/${dept}/${search}`);
       if(sort==="asc"){
         var data=response.data;
         data.sort((a, b) => (a.cgpa > b.cgpa) ? 1 : -1);
@@ -62,7 +62,7 @@ const Students = () => {
 
   const handleAdd = async () => {
     try {
-      await axios.post(`http://localhost:5000/add_Std`, {
+      await axios.post(`https://student-db-server.onrender.com/add_Std`, {
         name: s_name, dept_id: dept, age: s_age, adr: s_adr, cgpa: s_cgpa, email: s_email, reg_no: s_reg_no
       });
       fetchData();
@@ -84,7 +84,7 @@ const Students = () => {
         alert("No student is Selected!!");
         return;
       }
-      const res = await axios.post("http://localhost:5000/delete_Std", {ids: selectedData});
+      const res = await axios.post("https://student-db-server.onrender.com/delete_Std", {ids: selectedData});
       if(res.status!==200){
         throw new Error("res not sucks");
       }
@@ -99,7 +99,7 @@ const Students = () => {
 
   const handleUpdate = async() => {
     try{
-       const res = await axios.post(`http://localhost:5000/update/${s_id}`, {
+       const res = await axios.post(`https://student-db-server.onrender.com/update/${s_id}`, {
         name: s_name, dept_id: dept, age: s_age, adr: s_adr, cgpa: s_cgpa, email: s_email, reg_no: s_reg_no
       })
     }catch(err){

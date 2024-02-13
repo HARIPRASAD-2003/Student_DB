@@ -7,7 +7,7 @@ const DashBoard = () => {
     const fetchData = async() => {
         // setDept(["IT", "CSE", "CSBS", "AIDS", "ECE"]);
         try{
-        const res = await fetch("http://localhost:5000/all_dept");
+        const res = await fetch("https://student-db-server.onrender.com/all_dept");
         if(res.status===200){
             const data = await res.json();
             console.log(data);
